@@ -1,0 +1,10 @@
+--- This file is part of LuaDist project
+
+name = "gsl"
+version = "1.13"
+
+desc = "The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers."
+author = "Mark Galassi,Jim Davies,James Theiler,Brian Gough,Reid Priedhorsky,Gerard Jungman,Michael Booth,Fabrice Rossi,Simone Piccardi,Carlo Perassi,Dan, Ho-Jin,Szymon Jaroszewicz,Nicolas Darnis,Tuomo Keskitalo,Ivo Alxneit,Jason H. Stover,Patrick Alken"
+url = "http://www.gnu.org/software/gsl/"
+maintainer = "Peter Drahoš"
+license = "GPL"

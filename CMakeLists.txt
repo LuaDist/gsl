@@ -10,7 +10,7 @@
 # [1] http://websvn.kde.org/trunk/KDE/kdesdk/cmake/scripts/am2cmake?revision=902353&view=markup
 
 PROJECT (gsl C)
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 INCLUDE(dist.cmake)
 
 # utility function:

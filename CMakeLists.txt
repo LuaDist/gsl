@@ -185,7 +185,7 @@ IF(WIN32)
   target_link_libraries(gsl gslcblas)  #~ok?
 ENDIF(WIN32)
 
-install(TARGETS gsl ${INSTALL_TARGETS_DEFAULT_ARGS} DESTINATION ${INSTALL_LIB})
+install(TARGETS gsl RUNTIME DESTINATION ${INSTALL_BIN} LIBRARY DESTINATION ${INSTALL_LIB} ARCHIVE DESTINATION ${INSTALL_LIB})
 
 
 ########### next target ###############
@@ -199,7 +199,7 @@ IF(UNIX)
   target_link_libraries(gsl-randist m)  #~ok?
 ENDIF(UNIX)
 
-install(TARGETS gsl-randist ${INSTALL_TARGETS_DEFAULT_ARGS} DESTINATION ${INSTALL_BIN})
+install(TARGETS gsl-randist RUNTIME DESTINATION ${INSTALL_BIN} LIBRARY DESTINATION ${INSTALL_LIB} ARCHIVE DESTINATION ${INSTALL_LIB})
 
 
 ########### next target ###############
@@ -213,7 +213,7 @@ IF(UNIX)
   target_link_libraries(gsl-histogram m)  #~ok?
 ENDIF(UNIX)
 
-install(TARGETS gsl-histogram ${INSTALL_TARGETS_DEFAULT_ARGS} DESTINATION ${INSTALL_BIN})
+install(TARGETS gsl-histogram RUNTIME DESTINATION ${INSTALL_BIN} LIBRARY DESTINATION ${INSTALL_LIB} ARCHIVE DESTINATION ${INSTALL_LIB})
 
 
 ########### install files ###############

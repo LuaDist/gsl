@@ -150,7 +150,7 @@ add_library(gslcblas SHARED ${gslcblas_LIB_SRCS} cblas.def)
 target_link_libraries(gslcblas)
 set_target_properties(gslcblas PROPERTIES VERSION 1.0.0 SOVERSION 1)
 
-install(TARGETS gslcblas ${INSTALL_TARGETS_DEFAULT_ARGS} DESTINATION ${INSTALL_LIB})
+install(TARGETS gslcblas RUNTIME DESTINATION ${INSTALL_BIN} LIBRARY DESTINATION ${INSTALL_LIB} ARCHIVE DESTINATION ${INSTALL_LIB})
 
 
 ########### next target ###############

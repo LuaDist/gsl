@@ -146,7 +146,7 @@ set(gslcblas_LIB_SRCS
     izamax.c
     xerbla.c)
 
-add_library(gslcblas SHARED ${gslcblas_LIB_SRCS} cblas.def)
+add_library(gslcblas ${gslcblas_LIB_SRCS} cblas.def)
 target_link_libraries(gslcblas)
 set_target_properties(gslcblas PROPERTIES VERSION 1.0.0 SOVERSION 1)
 

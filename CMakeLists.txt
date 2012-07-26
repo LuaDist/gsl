@@ -17,15 +17,15 @@ include ( cmake/dist.cmake )
 # http://www.cmake.org/pipermail/cmake/2002-August/002948.html
 macro ( ASSERT test message )
 if ( NOT ${test} )
-    message ( FATAL_ERROR "FAILED ASSERT: ${message}" )
+  message ( FATAL_ERROR "FAILED ASSERT: ${message}" )
 endif ( NOT ${test} )
 endmacro ( ASSERT )
 
 if ( MSVC )
-    add_definitions ( -D_CRT_SECURE_NO_WARNINGS -Dinline=__inline )
-    # prevent math.h defining complex, causing problems in rowcol_source.c
-    add_definitions ( /Za )
-    set ( CMAKE_REQUIRED_DEFINITIONS ${CMAKE_REQUIRED_DEFINITIONS} /Za )
+  add_definitions ( -D_CRT_SECURE_NO_WARNINGS -Dinline=__inline )
+  # prevent math.h defining complex, causing problems in rowcol_source.c
+  add_definitions ( /Za )
+  set ( CMAKE_REQUIRED_DEFINITIONS ${CMAKE_REQUIRED_DEFINITIONS} /Za )
 endif ( MSVC )
 
 # configure tests
@@ -47,7 +47,7 @@ check_symbol_exists ( isinf math.h HAVE_DECL_ISINF )
 check_symbol_exists ( isfinite math.h HAVE_DECL_ISFINITE )
 check_include_files ( ieeefp.h HAVE_IEEEFP_H )
 if ( ${HAVE_FINITE_EXTRA} )
-    set ( FINITE_EXTRA ieeefp.h )
+  set ( FINITE_EXTRA ieeefp.h )
 endif ( ${HAVE_FINITE_EXTRA} )
 check_symbol_exists ( finite math.h ${FINITE_EXTRA} HAVE_DECL_FINITE )
 check_symbol_exists ( isnan math.h HAVE_DECL_ISNAN )
@@ -59,7 +59,7 @@ configure_file ( ${CMAKE_CURRENT_SOURCE_DIR}/gsl_version.h.cmake ${CMAKE_CURRENT
 #~2DO - variables not properly defined in file
 configure_file ( ${CMAKE_CURRENT_SOURCE_DIR}/gsl.pc.in ${CMAKE_CURRENT_BINARY_DIR}/gsl.pc )
 configure_file ( ${CMAKE_CURRENT_SOURCE_DIR}/gsl-config.in ${CMAKE_CURRENT_BINARY_DIR}/gsl-config 
-    COPYONLY #~2DO remove to allow variable substitution
+  COPYONLY #~2DO remove to allow variable substitution
 )
 
 set ( INSTALL_PKGCONFIG $ ( libdir ) /pkgconfig )
@@ -118,11 +118,11 @@ add_subdirectory ( doc )
 ########### next target ###############
 
 set ( gsl_sublibs gslblock gslblas gslbspline gslcomplex gslcheb gsldht gsldiff gslderiv 
-    gsleigen gslerr gslfft gslfit gslhistogram gslieee-utils gslintegration gslinterpolation 
-    gsllinalg gslmatrix gslmin gslmonte gslmultifit gslmultimin gslmultiroots gslntuple 
-    gslode-initval gslpermutation gslcombination gslpoly gslqrng gslrandist gslrng 
-    gslroots gslsiman gslsort gslspecfunc gslstatistics gslsum gslsys gsltest utils 
-    gslvector gslcdf gslwavelet )
+  gsleigen gslerr gslfft gslfit gslhistogram gslieee-utils gslintegration gslinterpolation 
+  gsllinalg gslmatrix gslmin gslmonte gslmultifit gslmultimin gslmultiroots gslntuple 
+  gslode-initval gslpermutation gslcombination gslpoly gslqrng gslrandist gslrng 
+  gslroots gslsiman gslsort gslspecfunc gslstatistics gslsum gslsys gsltest utils 
+  gslvector gslcdf gslwavelet )
 
 set ( gsl_LIB_SRCS version.c )
 foreach ( x ${gsl_sublibs} )
@@ -140,8 +140,8 @@ endforeach ( x )
 add_library ( gsl ${gsl_LIB_SRCS} gsl.def )
 set_target_properties ( gsl PROPERTIES VERSION 1.0.0 SOVERSION 1 )
 if ( WIN32 )
-    target_link_libraries ( gsl gslcblas )
-    #~ok?
+  target_link_libraries ( gsl gslcblas )
+  #~ok?
 endif ( WIN32 )
 
 install_library ( gsl )
@@ -154,8 +154,8 @@ add_executable ( gsl-randist ${gsl-randist_SRCS} )
 
 target_link_libraries ( gsl-randist gsl gslcblas )
 if ( UNIX )
-    target_link_libraries ( gsl-randist m )
-    #~ok?
+  target_link_libraries ( gsl-randist m )
+  #~ok?
 endif ( UNIX )
 
 install_executable ( gsl-randist )
@@ -168,8 +168,8 @@ add_executable ( gsl-histogram ${gsl-histogram_SRCS} )
 
 target_link_libraries ( gsl-histogram gsl gslcblas )
 if ( UNIX )
-    target_link_libraries ( gsl-histogram m )
-    #~ok?
+  target_link_libraries ( gsl-histogram m )
+  #~ok?
 endif ( UNIX )
 
 install_executable ( gsl-histogram )
@@ -179,4 +179,4 @@ install_executable ( gsl-histogram )
 install_foo ( ${CMAKE_CURRENT_BINARY_DIR}/gsl.pc ${CMAKE_CURRENT_BINARY_DIR}/gsl-config )
 install_test ( test_gsl_histogram.sh )
 install_header ( gsl_math.h gsl_pow_int.h gsl_nan.h gsl_machine.h gsl_mode.h gsl_precision.h 
-    gsl_types.h gsl_version.h gsl_minmax.h gsl_inline.h INTO gsl )
+  gsl_types.h gsl_version.h gsl_minmax.h gsl_inline.h INTO gsl )
